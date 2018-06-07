@@ -1,0 +1,116 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>我的资料</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="keywords" content="Coffee Break Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
+	Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+	<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+	<link href="__STATIC__/css//bootstrap.css" rel='stylesheet' type='text/css' />
+	<link href="__STATIC__/css//style.css" rel='stylesheet' type='text/css' />
+	<script src="__STATIC__/js/jquery.min.js"></script>
+	<!---- start-smoth-scrolling---->
+	<script type="text/javascript" src="__STATIC__/js/move-top.js"></script>
+	<script type="text/javascript" src="__STATIC__/js/easing.js"></script>
+	<script type="text/javascript">
+		jQuery(document).ready(function($) {
+			$(".scroll").click(function(event){		
+				event.preventDefault();
+				$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+			});
+		});
+	</script>
+	<!--start-smoth-scrolling-->
+</head>
+<body>
+
+	<div class="header-top">
+		<div class="container">
+			<div class="head-main">
+				<a href="index.html"><img src="__STATIC__/images/author/logo-1.png" alt="" /></a>
+			</div>
+		</div>
+	</div>
+
+	<!--header-top-end-->
+	<!--start-header-->
+	<div class="header">
+		<div class="container">
+			<div class="head">
+					{include file="public/nav"}
+				<div class="clearfix"></div>
+			</div>
+		</div>
+	</div>	
+	<!-- script-for-menu -->
+	<!-- script-for-menu -->
+	<script>
+		$("span.menu").click(function(){
+			$(" ul.navig").slideToggle("slow" , function(){
+			});
+		});
+	</script>
+	<!-- script-for-menu -->
+	<!--banner-starts-->
+	<!--banner-end-->
+	<!----start-contact---->
+	<div class="contact text-center"> <!-- 个人信息 -->
+		<table class="table table-striped table-bordered" style="width:70%;margin:0 auto">
+			<h2>我的资料</h2>
+			<tr>
+				<th>ID</th>
+				<td>{$myDetail.id}</td>
+			</tr>
+			<tr>
+				<th>用户名</th>
+				<td>{$myDetail.username}</td>
+			</tr>
+			<tr>
+				<th>真实姓名</th>
+				<td>{$myDetail.realname}</td>
+			</tr>
+			<tr>
+				<th>密码</th>
+				<td>{$myDetail.password}</td>
+			</tr>
+			<tr>
+				<th>密码加密码</th>
+				<td>{$myDetail.code}</td>
+			</tr>
+			<tr>
+				<th>电话</th>
+				<td>{$myDetail.tel}</td>
+			</tr>
+			<tr>
+				<th>邮箱</th>
+				<td>{$myDetail.email}</td>
+			</tr>
+			<tr>
+				<th>备注</th>
+				<td>{$myDetail.note}</td>
+			</tr>
+			<tr>
+				<th>状态</th>
+				<td>{$myDetail.status}</td>
+			</tr>
+			<tr>
+				<th>创建时间</th>
+				<td>{$myDetail.create_time}</td>
+			</tr>
+		</table>
+		<a href="{:url('author/edit')}" class="btn btn-success" style="margin-top:40px">修改资料</a>
+	</div>
+	<!----end-contact---->
+	<!--footer-starts-->
+	<div class="footer">
+		<div class="container">
+			<div class="footer-text">
+				<p>© 2015 Coffee Break. All Rights Reserved | Powered by <a href="http://www.smallseashell.com/" target="_blank">小贝壳网站模板</a> </p>
+			</div>
+		</div>
+	</div>
+	<!--footer-end-->
+</body>
+</html>

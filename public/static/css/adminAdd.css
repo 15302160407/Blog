@@ -1,0 +1,28 @@
+.cnt{
+	width: 800px;
+	height: 550px;
+}
+.input-group .form-control{
+	width: 250px;
+}
+.input-group{
+}
+hr{
+	margin: 0;
+}
+#cnt_one{
+	padding-right: 550px;
+}
+#uploader-demo{
+	position: absolute;
+	top: 300px;
+	right: 500px;
+	border: 1px solid #ccc;
+	height: 250px;
+	width: 200px;
+}
+#filePicker{
+	text-align: center;
+	margin: 0;
+	padding: 0;
+}

@@ -1,0 +1,48 @@
+<nav class="navbar navbar-default top-navbar" role="navigation">
+    <div class="navbar-header">
+
+        <a class="navbar-brand" href="index.html"><strong>后台管理系统</strong></a>
+
+    </div>
+
+    <ul class="nav navbar-top-links navbar-right" style="padding:20px 40px;">
+        {if condition="$admin"}
+        <span>欢迎您{$admin->username}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <span><a href="{:url('login/logout')}">退出</a></span>
+
+        {else/}
+        <span><a href="{:url('login/login')}" >登录</a></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        {/if}
+    </ul>
+</nav>
+
+<nav class="navbar-default navbar-side" role="navigation">
+    <div class="sidebar-collapse">
+        <ul class="nav" id="main-menu">
+
+            <li>
+                <a href="{:url('category/categoryList')}">文章分类列表</a>
+            </li>
+            <li>
+                <a href="{:url('category/addCategoryList')}">增加文章分类</a>
+            </li>   
+
+
+            <li>
+                <a href="{:url('artical/index')}">文章列表</a>
+            </li>
+            <li>
+                <a href="{:url('author/index')}">作者列表</a>
+            </li>
+
+            <li>
+                <a href="table.html">修改资料</a>
+            </li>
+
+
+        </ul>
+
+    </div>
+
+</nav>
+        <!-- /. NAV SIDE  -->

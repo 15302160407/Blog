@@ -1,0 +1,12 @@
+.category_id{
+    width: 49%;
+    margin: 0px;
+    font-size: 14px;
+    color: #999;
+    background: none;
+    padding: 15px 10px;
+    outline: none;
+    border: 1px solid #999;
+    font-family: 'Lato', sans-serif;
+    border-radius: 5px;
+}
