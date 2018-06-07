@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta content="" name="description" />
+    <meta content="webthemez" name="author" />
+    <title>修改资料</title>
+    <!-- Bootstrap Styles-->
+    <link href="__STATIC__/css/bootstrap.css" rel="stylesheet" />
+    <!-- FontAwesome Styles-->
+    <link href="__STATIC__/css/admin/font-awesome.css" rel="stylesheet" />
+    <!-- Morris Chart Styles-->
+    <link href="__STATIC__/js/admin/morris/morris-0.4.3.min.css" rel="stylesheet" />
+    <!-- Custom Styles-->
+    <link href="__STATIC__/css/admin/custom-styles.css" rel="stylesheet" />
+    <!-- Google Fonts-->
+    <!-- <link href='fonts.useso.com/css?family=Open+Sans' rel='stylesheet' type='text/css' /> -->
+    <link rel="stylesheet" href="__STATIC__/js/admin/Lightweight-Chart/cssCharts.css"> 
+</head>
+
+<body>
+    <div id="wrapper">
+        <!--/. NAV TOP  -->
+        {include file="public/nav"}
+        <!-- /. NAV SIDE  -->
+
+        <div id="page-wrapper">
+          <div class="header"> 
+            <h1 class="page-header">
+                修改资料
+            </h1>
+
+        </div>
+        <div id="page-inner">
+            <!-- /. ROW  -->
+            <div class="row">
+                <div class="col-md-12">
+                    <!-- Advanced Tables -->
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                         修改资料
+                     </div>
+                     <div class="panel-body">
+                                        
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div class="panel panel-default">
+                                    <div class="panel-body">
+                                        <form class="form-horizontal" method="post" action="{:url('admin/update')}">
+                                        <input type="text" name="id" value="{$admin.id}" hidden />
+
+                                            <div class="form-group">
+                                                <label for="inputEmail3" class="col-sm-2 control-label">用户名称</label>
+                                                <div class="col-sm-10">
+                                                    <input type="text" class="form-control" name="username" placeholder="username" value="{$admin.username}">
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="inputEmail3" class="col-sm-2 control-label">真实姓名</label>
+                                                <div class="col-sm-10">
+                                                    <input type="text" class="form-control" name="realname" placeholder="realname" value="{$admin.realname}">
+                                                </div>
+                                            </div>
+
+
+
+                                            <div class="form-group">
+                                                <label for="inputPassword3" class="col-sm-2 control-label">密码</label>
+                                                <div class="col-sm-10">
+                                                    <input type="password" class="form-control" name="password" placeholder="Password"  value="{$admin.password}">
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="inputPassword3" class="col-sm-2 control-label">密码加密码</label>
+                                                <div class="col-sm-10">
+                                                    <input type="text" class="form-control" name="code" placeholder="code"  value="{$admin.code}">
+                                                </div>
+                                            </div>
+
+                                      <div class="form-group">
+                                        <div class="col-sm-offset-2 col-sm-10">
+                                            <button type="submit" class="btn btn-default">修改</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--End Advanced Tables -->
+    </div>
+</div>
+</div>
+
+<footer>
+    <p>Copyright &copy; 2016.Company name All rights reserved.
+        <a target="_blank" href="http://www.smallseashell.com/">xiaobeike</a>
+    </p>      
+</footer>
+</div>
+<!-- /. PAGE INNER  -->
+<!-- /. PAGE WRAPPER  -->
+</div>
+<!-- /. WRAPPER  -->
+<!-- JS Scripts-->
+<!-- jQuery Js -->
+<script src="__STATIC__/js/admin/jquery-1.10.2.js"></script>
+<!-- Bootstrap Js -->
+<script src="__STATIC__/js/admin/bootstrap.min.js"></script>
+
+<!-- Metis Menu Js -->
+<script src="__STATIC__/js/admin/jquery.metisMenu.js"></script>
+<!-- Morris Chart Js -->
+<script src="__STATIC__/js/admin/morris/raphael-2.1.0.min.js"></script>
+<script src="__STATIC__/js/admin/morris/morris.js"></script>
+
+
+<script src="__STATIC__/js/admin/easypiechart.js"></script>
+<script src="__STATIC__/js/admin/easypiechart-data.js"></script>
+
+<script src="__STATIC__/js/admin/Lightweight-Chart/jquery.chart.js"></script>
+
+<!-- Custom Js -->
+<script src="__STATIC__/js/admin/custom-scripts.js"></script>
+
+
+<!-- Chart Js -->
+<script type="text/javascript" src="__STATIC__/js/admin/Chart.min.js"></script>  
+<script type="text/javascript" src="__STATIC__/js/admin/chartjs.js"></script> 
+
+</body>
+
+</html>

@@ -47,3 +47,7 @@
  #oimg{
    padding-left:30px;
  }
+ .edit{
+  display: inline-block;
+  margin-left: 200px;
+}

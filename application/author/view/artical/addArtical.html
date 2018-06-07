@@ -29,7 +29,14 @@
 </head>
 <body>
 	<!--header-top-starts-->
-	
+	<!--header-top-starts-->
+	<div class="header-top">
+		<div class="container">
+			<div class="head-main">
+				<a href="index.html"><img src="__STATIC__/images/author/logo-1.png" alt="" /></a>
+			</div>
+		</div>
+	</div>
 	<!--header-top-end-->
 	<!--start-header-->
 	<div class="header">
@@ -53,11 +60,13 @@
 			<div class="contact-bottom">
 				<div class="contact-text">		
 
-					<form method="post">			
+					<form method="post" action="{:url('artical/save')}">			
 						<div class="col-md-8 contact-right">
 							<input placeholder="标题" type="text" required name="title">
 							<select name="category_id" class="category_id">
-								<option></option>
+							{volist name="categoryList" id="vo"}
+								<option value="{$vo.id}">{$vo.categoryname}</option>
+							{/volist}
 							</select>
 
 							<textarea placeholder="描述" required name="description" style="margin-bottom:40px;"></textarea>

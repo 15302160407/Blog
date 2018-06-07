@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta content="" name="description" />
     <meta content="webthemez" name="author" />
-    <title>文章列表</title>
+    <title>我的资料</title>
     <!-- Bootstrap Styles-->
     <link href="__STATIC__/css/bootstrap.css" rel="stylesheet" />
     <!-- FontAwesome Styles-->
@@ -39,7 +39,7 @@
                     <!-- Advanced Tables -->
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                           文章列表
+                           我的资料
                        </div>
                        <div class="panel-body">
                         <div class="table-responsive">
@@ -47,29 +47,40 @@
                                 <thead>
                                     <tr>
                                         <th>id</th>
-                                        <th>文章列表名称</th>
+                                        <th>用户名</th>
+                                        <th>真实姓名</th>
+                                        <th>密码</th>
+                                        <th>密码加密码</th>
                                         <th>状态</th>
                                         <th>创建时间</th>
-                                        <th>编辑</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                {volist name="category" id="vo"}
                                     <tr class="odd gradeX">
-                                        <td>{$vo.id}</td>
-                                        <td>{$vo.categoryname}</td>
-                                        <td>{$vo.status}</td>
-                                        <td>{$vo.create_time}</td>
-                                        <td><a href="{:url('category/delete',['id'=>$vo.id])}">删除</a></td>
+                                        <td>{$admin.id}</td>
+                                        <td>{$admin.username}</td>
+                                        <td>{$admin.realname}</td>
+                                        <td>{$admin.password}</td>
+                                        <td>{$admin.code}</td>
+                                        <td>
+                                            {if condition="$admin.status==1"}
+                                                正常
+                                             {elseif condition="$vo.status=0"/}
+                                                删除
+                                             {else/}
+                                                禁用
+                                             {/if}
+
+                                        </td>
+                                        <td>{$admin.create_time}</td>
                                     </tr>
-                                {/volist}
                                 </tbody>
                             </table>
-                            {$category->render()}
                         </div>
 
                     </div>
                 </div>
+                <div class="edit"><a href="{:url('admin/edit')}">修改资料</a></div>
                 <!--End Advanced Tables -->
             </div>
         </div>

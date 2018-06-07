@@ -93,7 +93,7 @@ position: fixed;
   top: 80px;
 }
 #page-wrapper {
-  background: #fff;  
+  background:#EDEDED;  
   position: relative;
   top: 55px;
   box-shadow: 0 0 10px #757575;
@@ -540,6 +540,7 @@ padding-top: 4px;
 	background:transparent;
 	text-shadow:none;
 	font-size: 14px;
+  text-align: center;
 }
 .sidebar-collapse > .nav > li > a {
 	padding: 12px 10px;
@@ -679,10 +680,16 @@ font-size: 19px;
   margin: 14px;
 }
 }
+/*
+管理员修改资料按钮*/
 
-
-
-
-.nav li a{
-  text-align: center;;
+.edit a{
+  display: inline-block;
+  background: #3E3E3E;
+  padding: 5px 10px;
+  color:#B8B8B8;
+}
+.edit a:hover{
+  color: none;
+  text-decoration: none;;
 }

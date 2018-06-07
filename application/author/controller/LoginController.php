@@ -20,6 +20,7 @@ class LoginController extends Controller
     	 //密码加密码
         $userPassword=$authorUsername->password.$authorUsername->code;
         session("authorId",$authorUsername->id,"id");
+        session('my_user',$authorUsername,'my');
         if($userPassword!=$data['code']){
             $this->error("密码加密码有误！");
         }
