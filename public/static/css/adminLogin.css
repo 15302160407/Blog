@@ -47,7 +47,12 @@
  #oimg{
    padding-left:30px;
  }
- .edit{
-  display: inline-block;
-  margin-left: 200px;
+
+
+
+.edit a{
+    color: #fff;
+    display: block;
+    background-color: #5bc0de;
+    border-color: #46b8da;
 }

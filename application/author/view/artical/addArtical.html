@@ -63,6 +63,7 @@
 					<form method="post" action="{:url('artical/save')}">			
 						<div class="col-md-8 contact-right">
 							<input placeholder="标题" type="text" required name="title">
+							
 							<select name="category_id" class="category_id">
 							{volist name="categoryList" id="vo"}
 								<option value="{$vo.id}">{$vo.categoryname}</option>

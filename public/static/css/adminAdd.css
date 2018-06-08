@@ -15,9 +15,8 @@ hr{
 }
 #uploader-demo{
 	position: absolute;
-	top: 300px;
+	top: 500px;
 	right: 500px;
-	border: 1px solid #ccc;
 	height: 250px;
 	width: 200px;
 }
