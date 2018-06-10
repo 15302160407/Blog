@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>我的文章</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<link href="__STATIC__/css/bootstrap.css" rel='stylesheet' type='text/css' />
+<link href="__STATIC__/css/style.css" rel='stylesheet' type='text/css' />
+<script src="__STATIC__/js/jquery.min.js"></script>
+<!---- start-smoth-scrolling---->
+<script type="text/javascript" src="__STATIC__/js/move-top.js"></script>
+<script type="text/javascript" src="__STATIC__/js/easing.js"></script>
+<script type="text/javascript">
+			jQuery(document).ready(function($) {
+				$(".scroll").click(function(event){		
+					event.preventDefault();
+					$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+				});
+			});
+		</script>
+<!--start-smoth-scrolling-->
+	<!--script-->
+	<script src="__STATIC__/js/modernizr.custom.97074.js"></script>
+	<script src="__STATIC__/js/jquery.chocolat1.js"></script>
+		<link rel="stylesheet" href="__STATIC__/css/chocolat.css" type="text/css" media="screen" charset="utf-8">
+		<!--light-box-files -->
+		<script type="text/javascript" charset="utf-8">
+		$(function() {
+			$('.gallery a').Chocolat();
+		});
+		</script>
+		 <script type="text/javascript" src="__STATIC__/js/jquery.hoverdir.js"></script>
+</head>
+<body>
+	<!--header-top-starts-->
+	<div class="header-top">
+		<div class="container">
+			<div class="head-main">
+				<a href="index.html"><img src="__STATIC__/images/author/logo-1.png" alt="" /></a>
+			</div>
+		</div>
+	</div>
+	<!--header-top-end-->
+	<!--start-header-->
+	<div class="header">
+		<div class="container">
+			<div class="head">
+			{include file="public/nav"}
+				<div class="clearfix"></div>
+			</div>
+			</div>
+	</div>	
+	<!--banner-starts-->
+	<div class="banner">
+		<div class="container">
+		</div>
+	</div>
+	<!--banner-end-->
+	<!--gallery-starts-->
+	<div class="gallery">
+		<div class="container">
+			<div class="gallery-top heading">
+				<h3>我的文章</h3>
+			</div>
+			<section>
+				<ul id="da-thumbs" class="da-thumbs">
+				{volist name="myArticle" id="vo"}
+					<li>
+						<!-- <a href="{:url('atircle/detail')}" rel="title" class="b-link-stripe b-animate-go  thickbox"> -->
+						<a href="{:url('article/detail',['article_id'=>$vo.id])}" target="_blank">
+							<img src="__STATIC__/images/author/g-1.jpg" alt="" />
+							<div>
+								<h5>{$vo.title}</h5>
+								<span>{$vo.description}</span>
+							</div>
+						</a>
+					</li>
+					{/volist}
+										
+			
+					<div class="clearfix"> </div>
+				</ul>
+			</section>
+				
+		 <script type="text/javascript">
+			$(function() {
+			
+				$(' #da-thumbs > li ').each( function() { $(this).hoverdir(); } );
+
+			});
+		 </script>
+        </div>
+	</div>
+	<!--gallery-end-->
+	<!--footer-starts-->
+	<div class="footer">
+		<div class="container">
+			<div class="footer-text">
+				<p>© 2015 Coffee Break. All Rights Reserved | Powered by <a href="http://www.smallseashell.com/" target="_blank">小贝壳网站模板</a> </p>
+			</div>
+		</div>
+	</div>
+	<!--footer-end-->
+</body>
+</html>

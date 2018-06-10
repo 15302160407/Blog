@@ -24,10 +24,6 @@
 			vache                 : true,					
 			separator1            : ' | ',						
 			separator2            : '/',						
-			leftImg               : 'images/left.gif',	
-			rightImg              : 'images/right.gif',	
-			closeImg              : 'images/close.gif',		
-			loadingImg            : 'images/loading.gif',		
 			currentImage          : 0,						
 			setIndex              : 0,
 			setTitle              : '',
@@ -38,7 +34,7 @@
 		settings.setIndex = calls;
 		images[settings.setIndex] = [];
 		
-		//images:
+		images:
 		this.each(function(index){
 			if(index == 0 && settings.linkImages && settings.setTitle == ''){
 				settings.setTitle = isSet($(this).attr('rel'), ' ');
@@ -58,7 +54,7 @@
 			})
 		});
 		
-		//setIndex:
+		setIndex:
 		for(var i = 0; i < images[settings.setIndex].length; i++)
 		{
 			if(images[settings.setIndex]['displayAsALink']){
@@ -84,7 +80,7 @@
 			showChocolat();
 			return false;
 		}
-		function _interface(){
+/*		function _interface(){
 			//html
 			clear();
 			settings.container.append('<div id="Choco_overlay"></div><div id="Choco_content"><div id="Choco_close"></div><div id="Choco_loading"></div><div id="Choco_container_photo"><img id="Choco_bigImage" src="" /></div><div id="Choco_container_description"><span id="Choco_container_title"></span><span id="Choco_container_via"></span></div><div id="Choco_left_arrow" class="Choco_arrows"></div><div id="Choco_right_arrow" class="Choco_arrows"></div></div>');	
@@ -145,7 +141,7 @@
 				.fadeIn(settings.fadeInOverlayduration);
 			$('#Choco_content').fadeIn(settings.fadeInImageduration,function(){});
 			
-		}
+		}*/
 		function load(image,resize){
 			settings.currentImage = image;
 			$('#Choco_loading').fadeIn(settings.fadeInImageduration);
@@ -235,6 +231,7 @@
 			$('#Choco_container_title').html(images[settings.setIndex][settings.currentImage]['caption']);
 			$('#Choco_container_via').html(settings.setTitle+settings.separator1+current +settings.separator2+last);
 		}
+		
 		function isSet(variable,defaultValue){
 			// return variable === undefined ? defaultValue : variable; ?
 			if (variable === undefined) {

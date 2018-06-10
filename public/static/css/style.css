@@ -408,6 +408,8 @@ ul.navig li a.active{
 	color: #999;
 	line-height: 1.8em;
 	margin-top: 4%;
+	height: 100px;
+	overflow: hidden;;
 }
 .about-btn {
 	margin-top:3%;
@@ -843,6 +845,7 @@ h3.ghj {
 	width: 17%;
 	text-align: center;
 }
+
 .gallery-top{
 	margin-bottom: 3%;
 }

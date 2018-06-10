@@ -8,6 +8,9 @@ class AuthorController extends Controller//登录
     $auhtorId=session("authorId",'',"id");
     $myDetail=model("Author")->getAuthor($auhtorId);
     $this->assign('myDetail',$myDetail);
+
+    $article=model('Article')->getAllArticle();
+    $this->assign('article',$article);
     return $this->fetch();
   }
 
