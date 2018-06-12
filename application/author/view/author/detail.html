@@ -58,10 +58,10 @@
 	<!--banner-end-->
 	<!----start-contact---->
 	<div class="box">		
-		<div class="cnt">
+		<div class="cnt detail">
 			<p id="huanying"><span id="cnt_one">我的资料</span></p>
  <!-- 个人信息 -->
-		<table class="table table-striped table-bordered" style="width:70%;margin:0 auto">
+		<table class="table table-striped table-bordered">
 			<tr>
 				<th>ID</th>
 				<td>{$myDetail.id}</td>
@@ -111,6 +111,11 @@
 				<td>{$myDetail.create_time}</td>
 			</tr>
 		</table>
+		<div class="img">
+			<span>我的头像</span></br>
+			<img src="__STATIC__/images/author/abt-1.jpg">
+		</div>
+		<div class="clearfix"></div>
 		<div class="edit"><a href="{:url('author/edit')}" class="btn" style="margin-top:40px">修改资料</a></div>
 	</div>
 	</div>

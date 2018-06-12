@@ -7,7 +7,7 @@
             // swf文件路径
            swf: '__PUBLIC__/webuploader/uploader.swf', //加载swf文件，路径一定要对
             // 文件接收服务端。
-            server: '{:url("register/ajaxUpload")}',
+            server: '{:url("author/author/ajaxUpload")}',
             // 选择文件的按钮。可选。
             // 内部根据当前运行是创建，可能是input元素，也可能是flash.
             pick: '#filePicker',
@@ -16,15 +16,16 @@
             	title: 'Images',
             	extensions: 'gif,jpg,jpeg,bmp,png',
             	mimeTypes: 'image/'
-            }
+            },
+            fileNumLimit: 1, //限制上传个数
         });
       //上传完成事件监听
       uploader.on( 'fileQueued', function(file) {
       	var $li = $(
       		'<div id="' + file.id + '" class="file-item thumbnail">' +
-      		'<img>' +
-      		'<div class="info">' + file.name + '</div>' +
-      		'</div>'
+      		'<img>' 
+      		// '<div class="info">' + file.name + '</div>' +
+      		// '</div>'
       		),
       	$img = $li.find('img');
             // $list为容器jQuery实例

@@ -19,11 +19,11 @@ class LoginController extends Controller
         }
         session('my_user',$adminUsername,'my');
          //密码加密码
-        $userPassword=$adminUsername->password.md5($adminUsername->code);
-        if($userPassword!=md5($data['code'])){
-            $this->error("密码加密码有误！");
-        }
-        $this->success('登录成功！');
+        // $userPassword=$adminUsername->password.md5($adminUsername->code);
+        // if($userPassword!=md5($data['code'])){
+        //     $this->error("密码加密码有误！");
+        // }
+        $this->success('登录成功','category/categoryList');
 
     }
      public function logout(){

@@ -24,5 +24,13 @@ class AuthorController extends Controller
 		$this->error("删除有误！");
 	}
 
+	public function article(){
+		$article=model('Article')->getAllArticle();
+		$admin=Model("Admin")->getAdmin();
+		$this->assign('admin',$admin);
+		$this->assign('article',$article);
+		return $this->fetch();
+	}
+
 
 }

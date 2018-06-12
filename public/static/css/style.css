@@ -2098,4 +2098,20 @@ ul.blog-ic {
 		padding: 1.5em 0;
 	}
 }
+.logo img{
+width: 150PX;
+height: 100PX;
+}
+.category_id {
+    width: 49%;
+    margin: 0px;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #999;
+    background: none;
+    padding: 10px 10px;
+    outline: none;
+    border: 1px solid #999;
+    font-family: 'Lato', sans-serif;
+    border-radius: 5px;
 /*--media-quaries-end-here--*/
