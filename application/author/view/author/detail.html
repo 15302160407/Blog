@@ -96,14 +96,7 @@
 			</tr>
 			<tr>
 				<th>状态</th>
-				<td>
-					 {if condition="$myDetail.status==1"}
-                        正常
-                     {elseif condition="$myDetail.status==0"/}
-                        删除
-                     {elseif condition="$myDetail.status==2"/}
-                        禁用
-                     {/if}
+				<td>{$myDetail.status|status}
 				</td>
 			</tr>
 			<tr>
@@ -113,7 +106,7 @@
 		</table>
 		<div class="img">
 			<span>我的头像</span></br>
-			<img src="__STATIC__/images/author/abt-1.jpg">
+			<img src="__STATIC__/images/authorLogo/{$myDetail.logo}">
 		</div>
 		<div class="clearfix"></div>
 		<div class="edit"><a href="{:url('author/edit')}" class="btn" style="margin-top:40px">修改资料</a></div>

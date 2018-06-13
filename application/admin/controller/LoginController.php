@@ -12,6 +12,11 @@ class LoginController extends Controller
             $this->error("有错");
         }
         $data=input('post.');
+
+        $captcha=$data['captcha'];
+        if(!captcha_check($captcha)){
+            $this->error("验证码有有误！");
+        }
         $username=$data['username'];
         $adminUsername=model("Admin")->getAdminByUsername($username);
         if(!$adminUsername){

@@ -1,47 +1,54 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>登录</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>登录</title>
 
-<link rel="stylesheet" href="__STATIC__/css/adminLogin.css">
+  <link rel="stylesheet" href="__STATIC__/css/adminLogin.css">
 
-<link rel="stylesheet" href="__STATIC__/css/bootstrap.css">  
-	<script src="__STATIC__/js/jquery.min.js"></script>
-	<script src="__STATIC__/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="__STATIC__/css/bootstrap.css">  
+  <script src="__STATIC__/js/jquery.min.js"></script>
+  <script src="__STATIC__/js/bootstrap.min.js"></script>
 </head>
 
 <body>
 
  <div class="header-top">
-    <div class="container">
-      <div class="head-main">
-        <a href="index.html"><img src="__STATIC__/images/author/logo-1.png" alt="" /></a>
-      </div>
+  <div class="container">
+    <div class="head-main">
+      <a href="index.html"><img src="__STATIC__/images/author/logo-1.png" alt="" /></a>
     </div>
   </div>
+</div>
 
-  <div class="box">
-     <div class="cnt">
-        <p id="huanying"><span id="cnt_one">管理员登录</span><a href="{:url('author/login/login')}" id="cnt_two">用户登录>></a></p>
-        <hr />
-        <div>
-           <form class="bs-example bs-example-form" role="form" action="{:url('login/check')}" method="post">
-		      <div class="input-group">
-			      <span class="input-group-addon"><img src="__STATIC__/images/adminLogin/未标题-1_03.png"></span>
-			      <input type="text" class="form-control" name="username" placeholder="请输入您的用户名">
-		      </div><br>
-		      <div class="input-group">
-			      <span class="input-group-addon"><img src="__STATIC__/images/adminLogin/suo.png"></span>
-			      <input type="password" name="code" class="form-control" placeholder="请输入您的密码加密码">
-		      </div><br>
-        </div>
-        <div style="margin-top:40px;">
-           <input class="form-control btn btn-info" type="submit" value="登录"/>
-        </div>
-
-	       </form>
-     </div> 
+<div class="box">
+ <div class="cnt">
+  <p id="huanying"><span id="cnt_one">管理员登录</span><a href="{:url('author/login/login')}" id="cnt_two">用户登录>></a></p>
+  <hr />
+  <div>
+   <form class="bs-example bs-example-form" role="form" action="{:url('login/check')}" method="post">
+    <div class="input-group">
+     <span class="input-group-addon"><img src="__STATIC__/images/adminLogin/未标题-1_03.png"></span>
+     <input type="text" class="form-control" name="username" placeholder="请输入您的用户名">
+   </div><br>
+   <div class="input-group">
+     <span class="input-group-addon"><img src="__STATIC__/images/adminLogin/suo.png"></span>
+     <input type="password" name="code" class="form-control" placeholder="请输入您的密码加密码">
+   </div><br>
+   <div class="input-group">
+   <label for="captcha" class="col-sm-4 control-label">验证码：</label>
+    <div class="col-sm-8">
+      <input  type="text" placeholder="请输入验证码" class="form-control" name="captcha">
+      <img style="height: 35px;" src="{:captcha_src()}" alt="captcha" onclick="javascript:this.src='{:captcha_src()}?tm='+Math.random();" style="cursor: pointer"/>
+    </div>
   </div>
+</div>
+<div style="margin-top:40px;">
+ <input class="form-control btn btn-info" type="submit" value="登录"/>
+</div>
+
+</form>
+</div> 
+</div>
 </body>
 </html>

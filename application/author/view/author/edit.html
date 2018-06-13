@@ -87,12 +87,12 @@
      </div><br>
         
       <!-- 头像 -->
-   <div id="uploader-demo">
+    <div id="uploader-demo">
     <!--用来存放item-->
     <p>请选择您的头像：</p>
     <div id="fileList" class="uploader-list">
     </div>
-    <div id="ss" >选择图片</div>
+    <div id="filePicker" >选择图片</div>
   </div>
 
 
@@ -107,11 +107,8 @@
 </div>
 </body>
 
-
-  <script type="text/javascript" src="__PUBLIC__/webuploader/webuploader.min.js"></script><!-- 上传图片 -->
-
-  <script type="text/javascript" src="__STATIC__/js/author/author.js"></script><!-- 上传图片 -->
-
+   <script type="text/javascript" src="__PUBLIC__/webuploader/webuploader.min.js"></script><!-- 上传图片 -->
+  <!-- <script type="text/javascript" src="__STATIC__/js/author/author.js"></script><!-- 上传图片 --> 
   <script type="text/javascript">
     
      var $list=$("#fileList");   //这几个初始化全局的百度文档上没说明，好蛋疼
@@ -139,9 +136,8 @@
       uploader.on( 'fileQueued', function(file) {
         var $li = $(
           '<div id="' + file.id + '" class="file-item thumbnail">' +
-          '<img>' 
-          // '<div class="info">' + file.name + '</div>' +
-          // '</div>'
+          '<img>' +
+          '</div>'
           ),
         $img = $li.find('img');
             // $list为容器jQuery实例

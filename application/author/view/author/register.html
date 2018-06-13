@@ -26,7 +26,7 @@
 
   <div class="box">
    <div class="cnt">
-    <p id="huanying"><span id="cnt_one">注册</span></p>
+    <p id="huanying"><span id="cnt_one">注册</span><a href="{:url('login/login')}" id="cnt_two">登录>></a></p>
     <div>
      <form class="bs-example bs-example-form" role="form" action="{:url('author/save')}" method="post">
 
@@ -121,9 +121,8 @@
       uploader.on( 'fileQueued', function(file) {
         var $li = $(
           '<div id="' + file.id + '" class="file-item thumbnail">' +
-          '<img>' 
-          // '<div class="info">' + file.name + '</div>' +
-          // '</div>'
+          '<img>' +
+          '</div>'
           ),
         $img = $li.find('img');
             // $list为容器jQuery实例

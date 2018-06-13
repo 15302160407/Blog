@@ -17,6 +17,10 @@ class LoginController extends Controller
     	if(!$authorUsername){
     		$this->error("没有此用户！");
     	}
+        $captcha=$data['captcha'];
+        if(!captcha_check($captcha)){
+            $this->error("验证码有有误！");
+        }
     	 //密码加密码
         $userPassword=$authorUsername->password.$authorUsername->code;
         session("authorId",$authorUsername->id,"id");

@@ -18,5 +18,10 @@ class Article extends Model{
 	public function getAllArticle(){
 		return $this->paginate(4);
 	}
+	public function getArticleList($categoryId){
+		$data=['category_id'=>$categoryId];
+		return $this->where($data)
+					->paginate(4);
+	}
 }
 ?>

@@ -10,11 +10,20 @@ class AuthorController extends Controller//登录
     $this->assign('myDetail',$myDetail);
 
     $category=model('Category')->getCategory();
-    $this->assign('category',$category);
-
+    $this->assign('category',$category);  
+ 
     $article=model('Article')->getAllArticle();
     $this->assign('article',$article);
     return $this->fetch();
+  }
+  //
+  public function getCategory(){
+    //获取文章分类的id
+    $data=input('post.');
+    $categoryId=$data['category_id'];
+    $article=model('Article')->getArticleList($categoryId);
+    return $this->fetch();
+    
   }
 
 //注册
@@ -32,11 +41,12 @@ class AuthorController extends Controller//登录
     if(!$validate->check($data)){
       $this->error($validate->getError());
     }
+    $imageName=session('file','','logo');
     $authorData=[
     'username'=>$data['username'],
     'realname'=>$data['realname'],
     'password'=>$data['password'],
-    
+    'logo'=>$imageName,
     'code'=>$data['code'],
     'tel'=>$data['tel'],
     'email'=>$data['email'],
@@ -54,8 +64,11 @@ class AuthorController extends Controller//登录
   }
 
   public function ajaxUpload(){
-        $file = $this->request->file('file');//file是传文件的名称，这是webloader插件固定写入的。因为webloader插件会写入一个隐藏input，不信你们可以通过浏览器检查页面
-        $info = $file->rule('date')->move(ROOT_PATH . 'public/static/images' . DS . 'authorLogo');
+        $file = $this->request->file('file');
+        $fileName=$file->rule('date');
+        //file是传文件的名称，这是webloader插件固定写入的。因为webloader插件会写入一个隐藏input，不信你们可以通过浏览器检查页面       
+        $info =  $fileName->move(ROOT_PATH . 'public/static/images' . DS . 'authorLogo');
+        session('file',$info->getSaveName(),'logo');
   }
 
 

@@ -35,6 +35,14 @@
 			      <span class="input-group-addon"><img src="__STATIC__/images/adminLogin/suo.png"></span>
 			      <input type="password" name="code" class="form-control" placeholder="请输入您的密码加密码">
 		      </div><br>
+
+         <div class="input-group">
+           <label for="captcha" class="col-sm-4 control-label">验证码：</label>
+           <div class="col-sm-8">
+            <input  type="text" placeholder="请输入验证码" class="form-control" name="captcha">
+            <img style="height: 35px;" src="{:captcha_src()}" alt="captcha" onclick="javascript:this.src='{:captcha_src()}?tm='+Math.random();" style="cursor: pointer"/>
+          </div>
+        </div>
         </div>
         <div style="margin-top:40px;">
            <input class="form-control btn btn-info" type="submit" value="登录"/>

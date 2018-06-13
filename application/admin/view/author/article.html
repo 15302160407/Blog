@@ -28,7 +28,7 @@
         <div id="page-wrapper">
           <div class="header"> 
             <h1 class="page-header">
-                文章
+                文章列表
             </h1>
 
         </div>
@@ -39,7 +39,7 @@
                     <!-- Advanced Tables -->
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                           文章
+                           文章列表
                        </div>
                        <div class="panel-body">
                         <div class="table-responsive">
@@ -58,18 +58,10 @@
                                     <tr class="odd gradeX">
                                         <td>{$vo.title}</td>
                                         <td>{$vo.author_id}</td>
-                                        <td>
-                                            {if condition="$vo.status==1"}
-                                                正常
-                                            {elseif condition="$vo.status=0"/}
-                                                删除
-                                            {else/}
-                                                禁用
-                                            {/if}
-                                        </td>
+                                        <td>{$vo.status|status}</td>
                                         <td>{$vo.create_time}</td>
                                         
-                                        <td><a href="{:url('author/delete',['id'=>$vo.id])}">删除</a></td>
+                                        <td><a href="{:url('author/delete',['id'=>$vo.id])}">删除</a> | <a href="{:url('author/forbidden',['id'=>$vo.id])}">禁用</a></td>
                                     </tr>
                                 {/volist}
                                 </tbody>

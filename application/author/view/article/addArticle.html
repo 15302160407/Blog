@@ -70,21 +70,10 @@
 							{/volist}
 							</select>
 
-							<textarea placeholder="描述" required name="description" style="margin-bottom:40px;"></textarea>
+							<textarea placeholder="描述" required name="description" maxlength="250"></textarea>
 
 							<!-- 加载编辑器的容器 -->
-							<script id="container" name="content" type="text/plain"></script>
-
-
-							<div id="uploader-demo">
-								<!--用来存放item-->
-								图片：
-								<div id="fileList" class="uploader-list" name="logo">
-								</div>
-								<div id="filePicker" >选择图片</div>
-							</div>
-
-
+							<script id="container" name="content" type="text/plain"></script>	
 							<div class="submit-btn">
 								<input type="submit" value="发布">
 							</div>
@@ -103,7 +92,7 @@
 <script type="text/javascript" src="__PUBLIC__/Ueditor/ueditor.all.js"></script>
 <!-- 实例化编辑器 -->
 <script type="text/javascript">
-	var ue = UE.getEditor('container');
+	var ue = UE.getEditor('container',{initialFrameWidth:730,initialFrameHeight:500,});
     //对编辑器的操作最好在编辑器ready之后再做
     ue.ready(function() {
     //设置编辑器的内容
