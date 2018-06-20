@@ -21,7 +21,13 @@ class Article extends Model{
 	public function getArticleList($categoryId){
 		$data=['category_id'=>$categoryId];
 		return $this->where($data)
-					->paginate(4);
+		->paginate(4);
+	}
+	//我的文章分类
+	public function getMyArticleList($author_id,$categoryId){
+		$data=['author_id'=>$author_id,'category_id'=>$categoryId];
+		return $this->where($data)
+		->paginate(4);
 	}
 }
 ?>

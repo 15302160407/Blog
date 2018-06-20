@@ -12,8 +12,12 @@ class LoginController extends Controller
     		$this->error("有错");
     	}
     	$data=input('post.');
+
     	$username=$data['username'];
     	$authorUsername=model("Author")->getAuthorByUsername($username);
+        if($authorUsername->status==2){
+            $this->error("此用户已被管理员禁用！");
+        }
     	if(!$authorUsername){
     		$this->error("没有此用户！");
     	}
@@ -28,7 +32,7 @@ class LoginController extends Controller
         if($userPassword!=$data['code']){
             $this->error("密码加密码有误！");
         }
-        $this->success('登录成功！','author/index');
+        $this->success('登录成功！','index/index');
 
     }
     public function test(){
@@ -37,6 +41,6 @@ class LoginController extends Controller
 
     public function logout(){
         session(null,'id');
-        $this->redirect('author/index');
+        $this->redirect('index/index');
     }
 }

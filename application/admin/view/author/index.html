@@ -48,7 +48,8 @@
                                     <tr>
                                         <th>id</th>
                                         <th>用户名</th>
-                                        <th>真实姓名</th>                           <th>电话</th>
+                                        <th>真实姓名</th>                           
+                                        <th>电话</th>
                                         <th>邮箱</th>
                                         <th>状态</th>
                                         <th>创建时间</th>
@@ -67,7 +68,8 @@
                                         </td>
                                         <td>{$vo.create_time}</td>
                                         
-                                        <td><a href="{:url('author/delete',['id'=>$vo.id])}">删除</a> | <a href="{:url('author/delete',['id'=>$vo.id])}">禁用</a></td>
+                                        <td><a href="{:url('author/delete',['id'=>$vo.id])}">删除</a> | 
+                                        <a href="{:url('author/forbidden',['id'=>$vo.id])}"   id="status" value="{$vo.status}">禁用</a></td>
                                     </tr>
                                 {/volist}
                                 </tbody>
@@ -119,5 +121,21 @@
 <script type="text/javascript" src="__STATIC__/js/admin/chartjs.js"></script> 
 
 </body>
+<!-- //禁用按钮 -->
+<script type="text/javascript">
+$(".odd").each(function(i){
+    var tr=$(this);
+    var value=tr.find("#status").attr("value");
+    var text=$(".odd td #status").text();
+    if(value==1){
+        tr.find("#status").text("禁用");
+    }
+    else if(value==2){
+        tr.find("#status").text("解禁");
+    }
+    else{}
+});
 
+        
+</script>
 </html>

@@ -1,5 +1,4 @@
-
-<!DOCTYPE html>
+`<!DOCTYPE html>
 <html>
 <head>
 	<title></title>
@@ -67,10 +66,14 @@
 					<div class="about-one">
 						<h3>文章</h3>
 						<form action="{:url('author/index')}" method="post">
-							<select name="category_id" class="category_id">
-								<option value="-1" selected >全部</option>
+
+							<span class="categoryList">文章分类</span>
+							<select name="category_id" class="category_id" id="category_id">
+								<option value="-1">全部</option>
 								{volist name="category" id="vo"}
-									<option value="{$vo.id}">{$vo.categoryname}</option>
+									<option value="{$vo.id}">
+										{$vo.categoryname}
+									</option>
 								{/volist}
 							</select>
 						</form>
@@ -79,12 +82,21 @@
 
 					<div class="about-tre">				
 						{volist name="article" id="vo"}
-						<div class="a-1" class="abt-left" >
-							<div class="col-md-6 abt-left"  style="margin-bottom:20px;">
-								<a href="{:url('article/detail',['article_id'=>$vo.id])}" target="_blank"><img src="__STATIC__/images/author/c-3.jpg" alt="" /></a>
+						<div class="a-1" class="abt-left" id="#{$vo.category_id}">
+							<div class="col-md-6 abt-left articleImg"  style="margin-bottom:20px;">
+							{if condition="$vo.status==2"}
+								<a>
+								<img class="articleLogo" src="__STATIC__/images/articleLogo/{$vo.logo}" alt="" /></a>
+								<p><i>此文章已被禁用</i></p>
+								<label>{$vo.create_time}</label>
+							{else/}
+								<a href="{:url('article/detail',['article_id'=>$vo.id])}" target="_blank">
+								<img class="articleLogo" src="__STATIC__/images/articleLogo/{$vo.logo}" alt="" /></a>
 								<h3>{$vo.title}</h3>
 								<p>{$vo.description}</p>
 								<label>{$vo.create_time}</label>
+
+							{/if}
 							</div>
 						
 						</div>
@@ -94,26 +106,19 @@
 						<div class="clearfix"></div>
 						{$article->render()}	
 				</div>
+
+				{if condition="$myDetail"}
 				<div class="col-md-4 about-right heading">
 					<div class="abt-1">
 						<h3>我</h3>
 						<div class="abt-one logo">
-							<img src="__STATIC__/images/author/c-2.jpg" alt="" />
+							<img src="__STATIC__/images/authorLogo/{$myDetail.logo}" alt="" />
 							<p>{$myDetail.username}</p>	
 							<p>{$myDetail.note}</p>						
 						</div>
 					</div>
-					<div class="abt-2">
-						<h3>文章分类</h3>
-						<ul>
-							{volist name="category" id="vo"}
-							<li><a href="single.html">
-								{$vo.categoryname}
-							</a> </li>
-							{/volist}
-						</ul>	
-					</div>
 				</div>
+				{/if}
 				<div class="clearfix"></div>			
 			</div>		
 		</div>
@@ -210,6 +215,30 @@
 			</div>
 		</div>
 	</div>
+	<div class="aa"></div>
 	<!--footer-end-->
 </body>
+
+	<!-- 根据文章分类显示相应文章 -->
+	<!-- <script type="text/javascript">
+	$("#category_id").change(function(){
+		 var opt=$("#category_id").val();
+		 console.log(opt);
+		 var request=new XMLHttpRequest();
+		 request.open("GET","edit.html");
+		 request.send();         
+		 request.onreadystatechange=function(){
+		 	if(request.readyState===4){
+		 		if(request.status===200){
+				 $(".aa").html(request.responseText);
+				 alert("ok");
+		 		}
+		 		else{
+		 			alert("error");
+		 		}
+	
+		 	}
+		 }
+	})
+	</script> -->
 </html>

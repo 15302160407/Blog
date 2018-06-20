@@ -31,6 +31,48 @@ class AuthorController extends Controller
 		$this->assign('article',$article);
 		return $this->fetch();
 	}
+	//禁用用户
+	public function forbidden(){
+		if(!input('?param.id')){
+			$this->error("参数有误！");
+		}
+		$id=input('param.id');		
+		$data=[
+			'status'=>2,
+		];
+		$author=model('Author')->save($data,['id'=>$id]);
+		if($author){
+     		$this->success("禁用成功!");
+    	}
+    	else{
+    		$data=[
+			'status'=>1,
+			];
+			$author=model('Author')->save($data,['id'=>$id]);
+			$this->success("解禁成功！");
+    	}
+	}
+	//禁用文章
+	public function forbiddenArticle(){
+		if(!input('?param.id')){
+			$this->error("参数有误！");
+		}
+		$id=input('param.id');		
+		$data=[
+			'status'=>2,
+		];
+		$article=model('Article')->save($data,['id'=>$id]);
+		if($article){
+     		$this->success("禁用成功!");
+    	}
+    	else{
+    		$data=[
+			'status'=>1,
+			];
+			$article=model('Article')->save($data,['id'=>$id]);
+			$this->success("解禁成功！");
+    	}
+	}
 
 
 }

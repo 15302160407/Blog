@@ -40,6 +40,8 @@ hr{
 }
 .detail .img{
 	margin-left: 600px;
+	border:1px solid #ccc;
+	text-align:center;
 }
 .detail .img img{
 	margin-top:20px;

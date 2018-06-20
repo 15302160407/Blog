@@ -1,21 +1,9 @@
 <?php
 namespace app\author\controller;
 use think\Controller;
-class AuthorController extends Controller//登录
+class AuthorController extends Base//登录
 {
-  public function index()
-  {
-    $authorId=session("authorId",'',"id");
-    $myDetail=model("Author")->getAuthor($authorId);
-    $this->assign('myDetail',$myDetail);
 
-    $category=model('Category')->getCategory();
-    $this->assign('category',$category);  
- 
-    $article=model('Article')->getAllArticle();
-    $this->assign('article',$article);
-    return $this->fetch();
-  }
   //
   public function getCategory(){
     //获取文章分类的id
@@ -98,11 +86,13 @@ class AuthorController extends Controller//登录
        if(!$validate->check($data)){
          $this->error($validate->getError());
        }
+       $imageName=session('file','','logo');
        $authorData=[
        'username'=>$data['username'],
        'realname'=>$data['realname'],
        'password'=>$data['password'],
        'code'=>$data['code'],
+       'logo'=>$imageName,
        'tel'=>$data['tel'],
        'email'=>$data['email'],
        'note'=>$data['note'],
@@ -118,5 +108,10 @@ class AuthorController extends Controller//登录
 
      }
 
+//获取分类文章
+     public function getArticle($id){
+      $article=model("Article")->get($id);
+      $this->assign('article',$article);
 
-   }
+     }
+}

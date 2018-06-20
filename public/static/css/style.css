@@ -862,9 +862,11 @@ h3.ghj {
 	margin: 0.4%;
 	background: #EFEFEF;
 	padding: 8px;
+	margin-bottom:80px;
 	position: relative;
 	box-shadow: 0 1px 3px rgba(231, 231, 231, 0.43);
 	width: 32.4%;
+	height: 250px;
 }
 .da-thumbs li a,
 .da-thumbs li a img {
@@ -2104,6 +2106,11 @@ ul.blog-ic {
 width: 150PX;
 height: 100PX;
 }
+.categoryList{
+	padding: 10px;
+	border-radius: 5px;
+	 border: 1px solid #999;
+}
 .category_id {
     width: 49%;
     margin: 0px;
@@ -2111,9 +2118,34 @@ height: 100PX;
     font-size: 14px;
     color: #999;
     background: none;
-    padding: 10px 10px;
+    padding: 10px;
     outline: none;
     border: 1px solid #999;
     font-family: 'Lato', sans-serif;
     border-radius: 5px;
+   }
 /*--media-quaries-end-here--*/
+.articleLogo{
+	height: 230px;
+	width: 100%;
+}
+.articleLogo img{
+	width:100%;
+  	height:100%;
+}
+
+.articleImg{
+	height: 400px;
+}
+.tool{
+	text-align: center;
+	margin-top:20px;
+}
+.tool a{
+	padding: 5px;
+}
+/*//点击文章列表是a标签变颜色*/
+.red>a{
+	color:red;
+	font-size: 20px;
+}

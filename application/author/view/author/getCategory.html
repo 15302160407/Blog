@@ -67,7 +67,7 @@
 					<div class="about-one">
 						<h3>文章</h3>
 						<form action="{:url('author/getCategory')}" method="post">
-							<select name="category_id" class="category_id">
+							<select name="category_id" class="category_id" id="category_id">
 								<option value="-1" selected >全部</option>
 								{volist name="category" id="vo"}
 									<option value="{$vo.id}">{$vo.categoryname}</option>

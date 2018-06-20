@@ -61,38 +61,38 @@
 	<!--gallery-starts-->
 	<div class="gallery">
 		<div class="container">
+
 			<div class="col-md-8 about-left">
 				<div class="gallery-top heading">
 					<h3>我的文章</h3>
 				</div>
 				<section>
 					<ul id="da-thumbs" class="da-thumbs">
-						{volist name="myArticle" id="vo"}
+
+						{volist name="article" id="article"}
 						<li>
-						{if condition="$vo.status==2"}
-							<a class="articleLogo">
-								<img src="__STATIC__/images/articleLogo/{$vo.logo}" alt="" />
+						{if condition="$article.status==2"}
+							<a class="articleLogo" >
+								<img src="__STATIC__/images/articleLogo/{$article.logo}" alt="" />
 								<div>
 									<h5>此文章已被禁用</h5>
-									<h5>{$vo.title}</h5>
+									<span>{$article.description}</span>
 								</div>
 							</a>
 						{else/}
-							<a class="articleLogo" href="{:url('article/detail',['article_id'=>$vo.id])}" target="_blank">
-								<img src="__STATIC__/images/articleLogo/{$vo.logo}" alt="" />
+							<a class="articleLogo" href="{:url('article/detail',['article_id'=>$article.id])}" target="_blank">
+								<img src="__STATIC__/images/articleLogo/{$article.logo}" alt="" />
 								<div>
-									<h5>{$vo.title}</h5>
-									<span>{$vo.description}</span>
+									<h5>{$article.title}</h5>
+									<span>{$article.description}</span>
 								</div>
 							</a>
-							<p class="tool"><a href="{:url('article/delete',['id'=>$vo.id])}">删除</a>
-								<a href="{:url('article/editArticle',['id'=>$vo.id])}">编辑</a>
-								</p>
-							</li>
 
+							<p class="tool"><a href="{:url('article/desete',['id'=>$article.id])}">删除</a>
+								<a href="{:url('article/editArticle',['id'=>$article.id])}">编辑</a></p>
+							</li>
 						{/if}
 							{/volist}
-
 
 							<div class="clearfix"> </div>
 						</ul>
@@ -103,32 +103,35 @@
 						<h3>文章分类</h3>
 						<ul>
 							{volist name="category" id="vo"}
-							<li ><a href="{:url('article/getMyArticleList',['category_id'=>$vo.id])}">
+							<li><a href="{:url('article/getMyArticleList',['category_id'=>$vo.id])}" {eq name="$article.category_id" value="$vo.id"}style="color:red" {/eq}>							
 								{$vo.categoryname}
-							</a> </li>
-							{/volist}
-						</ul>	
-					</div>
-				</div>
-				
-				<script type="text/javascript">
-					$(function() {
+							</a> 
+						</li>
+						{/volist}
 
-						$(' #da-thumbs > li ').each( function() { $(this).hoverdir(); } );
-
-					});
-				</script>
-			</div>
-		</div>
-		<!--gallery-end-->
-		<!--footer-starts-->
-		<div class="footer">
-			<div class="container">
-				<div class="footer-text">
-					<p>© 2015 Coffee Break. All Rights Reserved | Powered by <a href="http://www.smallseashell.com/" target="_blank">小贝壳网站模板</a> </p>
+					</ul>	
 				</div>
 			</div>
+
+			<script type="text/javascript">
+				$(function() {
+
+					$(' #da-thumbs > li ').each( function() { $(this).hoverdir(); } );
+
+				});
+			</script>
 		</div>
-		<!--footer-end-->
-	</body>
-	</html>
+
+	</div>
+	<!--gallery-end-->
+	<!--footer-starts-->
+	<div class="footer">
+		<div class="container">
+			<div class="footer-text">
+				<p>© 2015 Coffee Break. All Rights Reserved | Powered by <a href="http://www.smallseashell.com/" target="_blank">小贝壳网站模板</a> </p>
+			</div>
+		</div>
+	</div>
+	<!--footer-end-->
+</body>
+</html>
